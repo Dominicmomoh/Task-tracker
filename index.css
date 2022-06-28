@@ -1,0 +1,191 @@
+body{
+    background: cadetblue;
+}
+
+.wrapper{
+    max-width: 405px;
+    margin: 135px auto;
+    background: rgb(148, 0, 0);
+    border-radius: 7px;
+    padding: 28px 0;
+    box-shadow: 0 10px 30px rgb(93, 25, 0);
+}
+.task-input{
+    height: 52px;
+    padding: 0 25px;
+    position: relative;
+}
+.task-input input{
+    height: 100%;
+    width: 80%;
+    outline: none;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid rgb(181, 82, 82);
+    padding: 0 20px 0 52px;
+}
+.task-input input:focus,
+.task-input input.active{
+    padding-left: 52px;
+    border: 2px gold;
+}
+.task-input input::placeholder{
+    color: aqua;
+}
+.controls, li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.controls{
+    padding: 18px 25px;
+    border-bottom: 1px solid rgb(212, 255, 0);
+}
+.filters span{
+    cursor: pointer;
+    margin: 0 8px;
+    font-size: 17px;
+    color: rgb(0, 255, 247);
+}
+.filters span:first-child{
+    margin-left: 0;
+}
+.filters span.active{
+    color: blanchedalmond;
+}
+.controls .clear-btn{
+    outline: none;
+    opacity: 0.6;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 13px;
+    border-radius: 4px;
+    padding: 7x 13px;
+    border-radius: 4px;
+    letter-spacing: 0.3px;
+    pointer-events: none;
+    transition: transform 0.25s ease;
+    background: blue;
+}
+.clear-btn.active{
+    opacity: 0.9;
+    pointer-events: auto;
+}
+.clear-btn:active{
+    transform: scale(0.93);
+}
+.task-box{
+    margin-top: 20px;
+    margin-right: 5px;
+    padding: 0 20px 10px 25px;
+}
+.task-box.overflow{
+    overflow-y: auto;
+    max-height: 300px;
+}
+.task-box::-webkit-scrollbar{
+    width: 5px;
+}
+.task-box::-webkit-scrollbar-track{
+    background: #f1f1f1;
+    border-radius: 25px;
+}
+.task-box::-webkit-scrollbar-thumb{
+    background: #e6e6e6;
+    border-radius: 25px;  
+}
+.task-box .task{
+    list-style: none;
+    font-size: 17px;
+    margin-bottom: 18px;
+    padding-bottom: 16px;
+    align-items: flex-start;
+    border-bottom:1px solid rgb(125, 125, 125);
+}
+.task-box .task:last-child{
+    margin-bottom: 0;
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+.task-box .task label{
+    display: flex;
+    align-items: flex-start;
+}
+.task label input{
+    margin-top: 6px;
+    accent-color: yellow;
+}
+.task label p{
+    user-select: none;
+    margin-left: 12px;
+    word-wrap: break-word;
+}
+.task label p.checked{
+    text-decoration: line-through;
+}
+.task .settings{
+    position: relative;
+}
+.settings .task-menu{
+    position: absolute;
+    padding: 5px 0;
+    right: -5px;
+    bottom: -65px;
+    z-index: 2;
+    transform: scale(0);
+    border-radius: 4px;
+   background: rgb(254, 254, 254);
+   transform-origin: top right;
+   transition: transform 0.2s ease;
+   box-shadow: 0 0 6px black; 
+}
+.settings:hover .task-menu{
+    transform: scale(1);
+}
+.task-menu li{
+    height: 25px;
+    font-size: 16px;
+    padding: 17px;
+    margin-bottom: 2px;
+    justify-content: flex-start;
+}
+.task-menu li:last-child{
+    margin-bottom: 0;
+}
+.task-menu li:hover{
+    background: wheat;
+}
+.task-menu li i{
+padding-right: 8px;
+}
+.settings li i{
+    padding-right: 8px;
+}
+
+@media (max-width: 400px){
+    body{
+        padding: 0 10px;
+    }
+.wrapper{
+    padding: 20px 0;
+}
+.filters span{
+    margin: 0 5px;
+}
+.task-input{
+    padding: 0 20px;
+}
+.controls{
+    padding: 18px 20px;
+
+}
+.task-box{
+    margin-top: 20px;
+    margin-right: 5px;
+    padding: 0 15px 10px 20px;
+}
+.task label input{
+    margin-top: 4px;
+}
+}
